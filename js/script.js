@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+  $(document).on('scroll',function(){
+    if (($(document).scrollTop()>=$('#about').offset().top-30 && $(document).scrollTop()<$('#portfolio').offset().top-30) ||
+       ($(document).scrollTop()>=$('#projects').offset().top-30 && $(document).scrollTop()<$('#contact').offset().top-30)){
+      $('.icon-white').removeClass('icon-white').addClass('icon-black');
+    }
+    else {
+      $('.icon-black').removeClass('icon-black').addClass('icon-white');
+    }
+  });
+
   $('.icon').hover(function(){
     $('.navTitle').show('slide', {direction: 'left'}, 50);
   }, function () {
@@ -38,6 +48,18 @@ $(document).ready(function(){
         }, 1000, 'easeInOutExpo');
         event.preventDefault();
     });
+  });
+
+  $('.darken').hover(function(){
+    $(this).children('.project-info').removeClass('displayNone').addClass('display');
+  }, function() {
+    $(this).children('.project-info').removeClass('display').addClass('displayNone');
+  });
+
+  $('.project-info').hover(function(){
+    $(this).siblings('.screenshot').addClass('opacity');
+  }, function() {
+    $(this).siblings('.screenshot').removeClass('opacity');
   });
 
 });
