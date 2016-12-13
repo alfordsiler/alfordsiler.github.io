@@ -1,6 +1,4 @@
 body {
-  width: 100%;
-  height: 100%;
   font-family: 'Raleway', sans-serif;
   color: black;
   background-color: white;
@@ -40,11 +38,11 @@ a:active {
 .icon-black {
   color: black;
 }
-.navTitle, .navTitle1, .navTitle2, .navTitle3, .navTitle4 {
+.navTitle, .navTitle1, .navTitle2, .navTitle3, .navTitle4, .navTitle5 {
   display: none;
   font-size: 14px;
 }
-.icon, .icon1, .icon2, .icon3, .icon4 {
+.icon, .icon1, .icon2, .icon3, .icon4, .icon5 {
   margin-bottom: 10px;
   font-size: 17px;
 }
@@ -86,11 +84,14 @@ a:active {
   text-align: center;
   font-size: 1em;
 }
-.aboutMe {
+.aboutMe p {
+  width: 75%;
+  margin: 60px auto;
+  font-size: 1.1em;
 }
-.footer{
-  background-color: black;
-  height: 150px;
+.skillsCubes {
+  margin: 40px auto 10px auto;
+  width: 79%;
 }
 .centerText{
   text-align: center;
@@ -98,7 +99,6 @@ a:active {
 .pic-margin{
   margin-bottom: 30px;
 }
-
 .projects img {
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
@@ -115,6 +115,7 @@ a:active {
 }
 .darken {
   background-color: black;
+  position: relative;
 }
 .displayNone {
   display: none;
@@ -122,50 +123,47 @@ a:active {
 .display {
   display: block;
 }
-#roundup-info {
-  display: none;
-  z-index: 100;
-}
 .project-info {
   color: white;
   text-align: center;
-  position: absolute;
-  top: 18%;
-  width: 100%;
-  padding-right: 30px;
   animation-duration: .2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .project-name {
   font-size: 1.8em;
   animation-duration: .3s;
 }
 .project-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.1em;
   margin-right: 15px;
   margin-left: 15px;
-  font-weight: 100;
   animation-duration: .3s;
 }
 .project-buttons {
   animation-duration: .3s;
 }
 .btn-min-block {
-    min-width: 70px;
-    line-height: 26px;
+  min-width: 70px;
+  line-height: 26px;
 }
 .btn-theme {
-    color: #fff;
-    background-color: transparent;
-    border: 2px solid #fff;
-    margin-right: 7px;
-    margin-left: 7px;
-    margin-top: 10px;
-    text-align: center;
-    border-radius: 0;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 0;
 }
 .btn-theme:hover {
-    color: #000;
-    background-color: #fff;
-    border-color: #fff;
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
 }
 .info {
   display: none;
@@ -174,46 +172,14 @@ a:active {
   left: 0;
   text-align: center;
 }
-.contactForm {
-  height: 300px;
-}
-.footer {
-  color: white;
-  height: 165px !important;
-}
-.fa {
-  font-size: 3em;
-}
-.icon_div{
-  display: inline-block;
-  margin: 50px 20px 0 20px;
-  transition: all 0.2s ease;
-}
-.footer_icons, .footer_icons a {
-  text-align: center;
-  height: 125px;
-  margin-bottom: 10px;
-  color: white;
-}
-form {
-  margin-left: 150px;
-  margin-right: 150px;
-}
-.icon_div:hover
-{
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
 .cube {
   font-size: 10px; /* adjust font size to change cube size */
   width: 8em;
   height: 8em;
   text-align: center;
   position: relative;
-  margin-right: 20px; /* spacing between cubes */
-  margin-bottom: 20px;
+  margin-right: 30px; /* spacing between cubes */
+  margin-bottom: 30px;
   display: inline-block;
   -webkit-perspective: 1000px;
   perspective: 1000px; /* The lower the value, the more pronounced the 3d effect is */
@@ -225,7 +191,7 @@ form {
 }
 .cube ul {
   -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d; /* IE 11 or below doesn't support this, so in IE, we need to add another "perspective" property here via IE specific media queries (see below) */
+  transform-style: preserve-3d;
   -webkit-transform: translate3D(0,0,-4em);
   transform: translate3D(0,0,-4em); /* move cube back by 1/2 cube height (translateZ) to undo each cube's side being moved forward by 1/2 cube height */
   list-style: none;
@@ -247,7 +213,7 @@ form {
   transition: 0.5s all; /* transition duration */
 }
 .cube ul li span{
-  line-height: 5.2em; /* center text by setting line-height to cube's height (4m font size * 2em = 8em) */
+  line-height: 5.2em; /* center text by setting line-height to cube's height */
 }
 .cube1 ul li:nth-of-type(odd){
   background: #f16529;
@@ -361,9 +327,7 @@ form {
   background: #3f3023;
   color: white;
 }
-
 /* By default, all cubes show side 1 */
-
 .cube ul li:nth-of-type(1){
   -webkit-transform: rotateX(0deg) translate3D(0,0,4em);
   transform: rotateX(0deg) translate3D(0,0,4em); / set tranlateZ value to 1/2 cube height to bring it closer to screen, creating 3D effect */
@@ -401,4 +365,173 @@ form {
   -webkit-transform: rotateX(0deg) translate3D(0,0,4em);
   transform: rotateX(0deg) translate3D(0,0,4em);
 }
+.form-group{
+  width: 80%;
+  margin: 0 auto;
+}
+.group {
+  position:relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+input, textarea {
+  font-size: 15px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+input:focus     { outline:none; }
+textarea:focus    { outline:none; }
+/* LABEL */
+label          {
+  color: #999;
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.1s ease all;
+  -moz-transition: 0.1s ease all;
+  -webkit-transition: 0.1s ease all;
+}
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -12px;
+  font-size: 14px;
+  color:  #59abe5;
+}
+textarea:focus  ~ label, textarea:valid ~ label {
+  top:-12px;
+  font-size: 14px;
+  color:  #59abe5;
+}
+/* BOTTOM BARS */
+.bar {
+  position:relative;
+  display:block;
+  width: 100%;
+}
+.bar:before, .bar:after   {
+  content: '';
+  height: 3px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background:  #59abe5;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+textarea:focus ~ .bar:before, textarea:focus ~ .bar:after {
+  width:50%;
+}
+/* HIGHLIGHTER */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+/* active state */
+input:focus ~ .highlight, textarea:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+  from { background: #59abe5; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background: #59abe5; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background: #59abe5; }
+  to  { width:0; background:transparent; }
+}
+.button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 3px 5px #666666;
+  -moz-box-shadow: 0px 3px 5px #666666;
+  box-shadow: 0px 3px 5px #666666;
+  color: #ffffff;
+  padding: 10px;
+  background: #3498db;
+  text-decoration: none;
+}
 
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.footer {
+  color: white;
+  height: 110px !important;
+  background-color: black;
+}
+.fa {
+  font-size: 3em;
+}
+.icon_div{
+  display: inline-block;
+  margin: 20px 20px 0 20px;
+  transition: all 0.2s ease;
+}
+.footer_icons, .footer_icons a {
+  text-align: center;
+  height: 80px;
+  color: white;
+}
+.icon_div:hover
+{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.pulse {
+  animation: pulse 1s ease infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
